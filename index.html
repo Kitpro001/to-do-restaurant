@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f5f2" />
+    <title>Order Notes</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <p class="eyebrow">RESTAURANT ORDER NOTES <span>·</span> UTC+8</p>
+      </header>
+
+      <section class="entry-section" aria-labelledby="page-title">
+        <p class="overline">KEEP SERVICE SIMPLE</p>
+        <h1 id="page-title">Orders<span>.</span></h1>
+        <p class="intro">Write down the order. Mark it served when it reaches the table.</p>
+
+        <form id="order-form">
+          <label for="order-input">ORDER DETAILS</label>
+          <textarea
+            id="order-input"
+            name="order"
+            rows="3"
+            maxlength="1000"
+            placeholder="Type an order…&#10;For example: 2 coffees, 1 toast"
+            required
+          ></textarea>
+          <div class="form-footer">
+            <span>One order per entry</span>
+            <button type="submit">Add order <span aria-hidden="true">↗</span></button>
+          </div>
+        </form>
+      </section>
+
+      <section class="orders-section" aria-labelledby="orders-heading">
+        <div class="list-heading">
+          <h2 id="orders-heading">Order list</h2>
+          <span id="order-count" class="order-count">0</span>
+        </div>
+        <div id="orders-list" class="orders-list" aria-live="polite"></div>
+        <p id="empty-state" class="empty-state">Your orders will appear here.</p>
+      </section>
+
+      <footer>ORDER TIMES ARE DISPLAYED IN UTC+8</footer>
+    </main>
+  </body>
+</html>
